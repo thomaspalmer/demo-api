@@ -26,16 +26,4 @@ abstract class TestCase extends BaseTestCase
         Artisan::call('migrate');
         Artisan::call('passport:client --password --no-interaction');
     }
-
-    /**
-     * @return User
-     */
-    protected static function loginViaPassport(): User
-    {
-        $user = User::factory()->create();
-
-        Passport::actingAs($user);
-
-        return $user;
-    }
 }

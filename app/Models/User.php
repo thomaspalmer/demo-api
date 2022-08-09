@@ -32,6 +32,7 @@ class User extends Authenticatable
     protected $hidden = [
         'password',
         'remember_token',
+        'email_verified_at',
     ];
 
     /**
@@ -46,7 +47,7 @@ class User extends Authenticatable
     /**
      * @return HasMany
      */
-    public function bankAccount(): HasMany
+    public function bankAccounts(): HasMany
     {
         return $this->hasMany(BankAccount::class);
     }

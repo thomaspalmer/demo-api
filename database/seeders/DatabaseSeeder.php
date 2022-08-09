@@ -15,9 +15,14 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        $this->call(SpatieSeeder::class);
+
         User::factory()
             ->has(BankAccount::factory()->count(3))
-            ->count(3)
-            ->create();
+            ->count(30)
+            ->create()
+            ->each(function (User $user) {
+                $user->assignRole(fake()->randomElement(['user', 'admin']));
+            });
     }
 }
