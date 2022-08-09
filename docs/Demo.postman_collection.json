@@ -1,0 +1,121 @@
+{
+	"info": {
+		"_postman_id": "62e93f79-476c-45d8-b2b5-714d1166bcf6",
+		"name": "Demo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21972749"
+	},
+	"item": [
+		{
+			"name": "Request a token",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": "\n",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"grant_type\": \"password\",\n    \"username\": \"lwill@example.net\",\n    \"password\": \"password\",\n    \"client_id\": 1,\n    \"client_secret\": \"r1Cu8rQ6vQsyMpF8PamyYWCxQCVrCqco8V6MddEf\"\n}"
+				},
+				"url": {
+					"raw": "http://demo-api.test/oauth/token",
+					"protocol": "http",
+					"host": [
+						"demo-api",
+						"test"
+					],
+					"path": [
+						"oauth",
+						"token"
+					]
+				},
+				"description": "Request a token from our API"
+			},
+			"response": []
+		},
+		{
+			"name": "Refresh a token",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": "\n",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"grant_type\": \"refresh_token\",\n    \"client_id\": 1,\n    \"client_secret\": \"imGi3opodlwaxBRG2comBc8yrMyoXvX5zvr2QuRo\",\n    \"refresh_token\": \"def502000ff177378334b3038f60e4d520abc432945cb5e55e960b579d1b5b40cbea6fef95755843222775f2f522f91f88dad28f1f50572f46b0c56daf63598afc22f3a29e4b82ba8defa646346b6536e1a169ab8cee05e3fab6a5f9add973e2c1de41a4c7a56c805a39f54c872515258a6809bc339591b166e5cc2d07a9d383ac90354c155d230a0210209624b261926d7f3fb6f7da6e922b0b1226822ebdf3b4a941acaeddd91c728d8ca9820b3410ed0be065dd867d2fee2abaf5b9f2e74c65efd8e3c5d3b50252124c2ac9a309888daf99129bb55e9ffc67675612345d00bca403e65d080da200d4f0c3aa0d73e3d4a125f05f833ae590b3a2346a612ae3487fabd269b8a4316ae7fea2a1f0690fb669b299aa5f9b07f460525691e91a503a1070b1e4ad94f727a49e6ba16eb58e2b9172c0948293eb87e8b5d66064329ea712ce63e11a47a30449b44e85a87d590f9ae3bffa29b11af7445ebf435af19a9e\"\n}"
+				},
+				"url": {
+					"raw": "http://demo-api.test/oauth/token",
+					"protocol": "http",
+					"host": [
+						"demo-api",
+						"test"
+					],
+					"path": [
+						"oauth",
+						"token"
+					]
+				},
+				"description": "Request a token from our API"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Users",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://demo-api.test/api/users?page=2",
+					"protocol": "http",
+					"host": [
+						"demo-api",
+						"test"
+					],
+					"path": [
+						"api",
+						"users"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

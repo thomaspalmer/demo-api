@@ -26,7 +26,7 @@ class UserController extends Controller
      */
     public function index(): JsonResponse
     {
-        $users = $this->userRepository->with(['bankAccounts'])->paginate(10);
+        $users = $this->userRepository->with(['bankAccounts', 'roles'])->paginate(10);
 
         return $this->response
             ->paginate($users)
